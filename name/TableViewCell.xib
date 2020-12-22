@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="ИнвестУчебник" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogo-x5-9q9">
+                        <rect key="frame" x="90" y="7" width="31" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHV-TG-fcL">
+                        <rect key="frame" x="90" y="24" width="220" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="220" id="oGs-QY-roL"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="икон" translatesAutoresizingMaskIntoConstraints="NO" id="rka-Eg-gvE">
+                        <rect key="frame" x="16" y="7" width="56" height="56"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="56" id="4bu-bp-SjV"/>
+                            <constraint firstAttribute="width" constant="56" id="9gs-1g-Ddd"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="YHV-TG-fcL" firstAttribute="top" secondItem="ogo-x5-9q9" secondAttribute="bottom" constant="2" id="2jd-zJ-Zhd"/>
+                    <constraint firstItem="YHV-TG-fcL" firstAttribute="top" secondItem="ogo-x5-9q9" secondAttribute="bottom" constant="2" id="6NZ-U9-TDZ"/>
+                    <constraint firstItem="ogo-x5-9q9" firstAttribute="leading" secondItem="rka-Eg-gvE" secondAttribute="trailing" constant="18" id="7Pt-K0-NLD"/>
+                    <constraint firstItem="ogo-x5-9q9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="9Xc-Br-NRO"/>
+                    <constraint firstItem="YHV-TG-fcL" firstAttribute="leading" secondItem="rka-Eg-gvE" secondAttribute="trailing" constant="18" id="CJb-DF-AQq"/>
+                    <constraint firstAttribute="bottom" secondItem="rka-Eg-gvE" secondAttribute="bottom" constant="7" id="KhW-G1-jdb"/>
+                    <constraint firstItem="rka-Eg-gvE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="M8N-ml-SBt"/>
+                    <constraint firstItem="rka-Eg-gvE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Nc1-6K-dZC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imageCell" destination="rka-Eg-gvE" id="shx-8x-5OK"/>
+                <outlet property="subTitleCell" destination="YHV-TG-fcL" id="8Ve-YY-7OT"/>
+                <outlet property="titleCell" destination="ogo-x5-9q9" id="iYw-Ll-WKM"/>
+            </connections>
+            <point key="canvasLocation" x="298.55072463768118" y="67.633928571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="икон" width="200" height="200"/>
+    </resources>
+</document>
