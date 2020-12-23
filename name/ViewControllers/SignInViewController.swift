@@ -52,6 +52,11 @@ class SignInViewController: UIViewController {
                     //переход на центральный экран, при успешной регистрации
                     self.performSegue(withIdentifier: "signupToHome", sender: nil)
                     
+                    UserDefaults.standard.removeObject(forKey: DefaultsKey.keyAnd)
+                    UserDefaults.standard.removeObject(forKey: DefaultsKey.keyCurrentIndex)
+                    UserDefaults.standard.removeObject(forKey: DefaultsKey.keyProgress)
+                    UserDefaults.standard.removeObject(forKey: DefaultsKey.keyNameLabel)
+                    
                     print("Next screen")
                 }
             }

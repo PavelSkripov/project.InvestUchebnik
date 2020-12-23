@@ -15,7 +15,8 @@ class DefaultValue {
 struct DefaultsKey {
     static let keyProgress = "progressArray"
     static let keyCurrentIndex = "currentIndex"
-    
+    static let keyAnd = "and"
+    static let keyNameLabel = "userLableName"
 }
 
 class CompletedViewController: UIViewController {
@@ -27,6 +28,7 @@ class CompletedViewController: UIViewController {
     var currentIndex = 0
     var progressArray = [Int]()
     var search = 0
+    var and = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +46,11 @@ class CompletedViewController: UIViewController {
     //вычисление кол-ва пройденных курсов
     func add() {
         progressArray = defaults.object(forKey: DefaultsKey.keyProgress) as? [Int] ?? [Int]()
-        currentIndex = DefaultValue.defaultsV.integer(forKey: "forBeginValue")
+        currentIndex = defaults.integer(forKey: DefaultsKey.keyCurrentIndex)
         
         //используем массив с номерами курсов, добавляем номера, если раньше такой курс не был пройден. Если уже был, то массив не изменяется
         for name in progressArray {
-            if name == searchValue {
+            if name == incomingValue2 {
                 search = 1
                 break
             } else {
@@ -56,21 +58,25 @@ class CompletedViewController: UIViewController {
             }
         }
         if (search == 2) {
-        progressArray.append(searchValue)
+        progressArray.append(incomingValue2)
         // суммирование пройденных курсов для передачи значения на центральный экран
         currentIndex += 1
         search = 0
-        defaults.setValue(progressArray, forKey: "progressArray")
-            DefaultValue.defaultsV.setValue(currentIndex, forKey: "forBeginValue")
+            
+        defaults.setValue(currentIndex, forKey: DefaultsKey.keyCurrentIndex)
+        defaults.setValue(progressArray, forKey: DefaultsKey.keyProgress)
+        DefaultValue.defaultsV.setValue(currentIndex, forKey: DefaultsKey.keyAnd)
+            
         print("Массив стал \(progressArray)")
         print("Посчиталось прохождений тестов \(currentIndex)")
         }
         else if progressArray.count == 0 {
-            progressArray.append(searchValue)
+            progressArray.append(incomingValue2)
             currentIndex += 1
             search = 0
-            defaults.setValue(progressArray, forKey: "progressArray")
-            DefaultValue.defaultsV.setValue(currentIndex, forKey: "forBeginValue")
+            defaults.setValue(progressArray, forKey: DefaultsKey.keyProgress)
+            defaults.setValue(currentIndex, forKey: DefaultsKey.keyCurrentIndex)
+            DefaultValue.defaultsV.setValue(currentIndex, forKey: DefaultsKey.keyAnd)
             print("Массив стал \(progressArray)")
             print("Посчиталось прохождений тестов \(currentIndex)")
             
